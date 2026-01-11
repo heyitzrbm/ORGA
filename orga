@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ORGA | Trust Nature. Eat Better</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #2f7d32;
+    --dark: #1c1c1c;
+    --light: #f6fff7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2f7d32, #43a047);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+header p {
+    margin: 8px 0;
+}
+
+/* Section */
+section { padding: 30px 20px; }
+
+h2 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* Product Cards */
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--green);
+}
+
+/* Form */
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+button {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover { background: #256528; }
+
+/* Contact */
+.contact {
+    background: #e8f5e9;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: #bbb;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* WhatsApp Floating */
+.whatsapp-float {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>ORGA</h1>
+    <p><strong>Trust Nature. Eat Better</strong></p>
+    <p>Organic Snacks • Papad • Organic Masalas</p>
+</header>
+
+<section>
+    <div class="card">
+        <h2>About ORGA</h2>
+        <p>
+            ORGA is based in <strong>Hubli</strong> and manufacturing pure organic foods since <strong>2023</strong>.
+            No preservatives. No chemicals. Just natural goodness.
+        </p>
+    </div>
+
+    <h2>Our Products</h2>
+    <div class="products">
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1604908554161-1d2f70b4f6ff" alt="Organic Snacks">
+            <div class="product-info">
+                <h3>Organic Snacks</h3>
+                <p class="price">₹199 / pack</p>
+                <p>Healthy, crunchy, and preservative-free snacks.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1625944526094-cc7a5b8fcd3b" alt="Papad">
+            <div class="product-info">
+                <h3>Traditional Papad</h3>
+                <p class="price">₹149 / pack</p>
+                <p>Authentic taste made with organic ingredients.</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1615485737453-8c7f9c8f6b28" alt="Organic Masalas">
+            <div class="product-info">
+                <h3>Organic Masalas</h3>
+                <p class="price">₹249 / pack</p>
+                <p>Pure spices with rich aroma & flavor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h2>Place Your Order</h2>
+        <form onsubmit="sendToWhatsApp(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Mobile Number" required>
+
+            <select id="product" required>
+                <option value="">Select Product</option>
+                <option>Organic Snacks</option>
+                <option>Traditional Papad</option>
+                <option>Organic Masalas</option>
+            </select>
+
+            <input type="number" id="qty" placeholder="Quantity" required>
+
+            <textarea id="address" placeholder="Delivery Address" required></textarea>
+
+            <button type="submit">Order via WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<div class="contact">
+    <h2>Contact ORGA</h2>
+    <p>📍 Hanamanahalli, Karnataka</p>
+    <p>📞 +91-9535138668</p>
+    <p>📧 info@orgafoods.com</p>
+</div>
+
+<footer>
+    © 2026 ORGA. All Rights Reserved.
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919535138668"
+   class="whatsapp-float"
+   target="_blank">💬</a>
+
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let product = document.getElementById("product").value;
+    let qty = document.getElementById("qty").value;
+    let address = document.getElementById("address").value;
+
+    let message =
+        "Hello ORGA,%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Product: " + product + "%0A" +
+        "Quantity: " + qty + "%0A" +
+        "Address: " + address;
+
+    let whatsappURL = "https://wa.me/919535138668?text=" + message;
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+</body>
+</html>
